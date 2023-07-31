@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>record</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            /* body 样式 */
+            body {
+                font-family: Arial;
+                margin: 0;
+            }
+
+            /* 导航 */
+            .navbar {
+                overflow: hidden;
+                background-color: #ffffff;
+            }
+
+            /* 导航栏样式 */
+            .navbar a {
+                float: left;
+                display: block;
+                color: #000000;
+                text-align: center;
+                padding: 14px 20px;
+                text-decoration: none;
+            }
+
+            /* 右侧链接*/
+            .navbar a.right {
+                float: right;
+            }
+
+            /* 鼠标移动到链接的颜色 */
+            .navbar a:hover {
+                background-color: #ddd;
+                color: #ef61cb;
+            }
+
+            /* 按钮 */
+            .button {
+                background-color: #ffffff;
+                border: none;
+                border-radius: 50%/100%;
+                color: rgb(0, 0, 0);
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 18px;
+                margin: 4px 2px;
+                margin-right: 20px;
+                margin-left: 20px;
+                cursor: pointer;
+                /*width: 20%;*/
+            }
+
+            .button:hover{
+                background-color: #ff87e1;
+                color: white;
+            }
+
+            .r{
+                display: block;
+            }
+
+            .b{
+                display: none;
+            }
+
+            .s{
+                display: none;
+            }
+
+            /* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
+            @media screen and (max-width: 700px) {
+                .row {   
+                    flex-direction: column;
+                }
+            }
+
+            /* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
+            @media screen and (max-width: 400px) {
+                .navbar a {
+                    float: none;
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <img src="decoration\logo.png" width="5%" style="float:left;"/>
+
+        <div class="navbar">
+            <a href="#">个人记录</a>
+            <a href="#" class="right">返回首页</a>
+        </div>
+
+        <div class="navbar navbar2">
+            <button class="button" onmouseover="change('r')">学习记录</button>
+            <button class="button" onmouseover="change('b')">错题本</button>
+            <button class="button" onmouseover="change('s')">我的收藏</button>
+        </div>
+
+        <ul>
+            <li class="r" id="r"><p>这里是学习记录</p></li>
+            <li class="b" id="b"><p>这里是错题本</p></li>
+            <li class="s" id="s"><p>这里是我的收藏</p></li>
+        </ul>
+
+        <img src="decoration\AD0IlreXBhACGAAgj_vPxQUo3N3rsAcwsQk4yAE.jpg" width="100%"/>
+
+        <script type="text/javascript">
+            let r = document.getElementById('r')
+            let b = document.getElementById('b')
+            let s = document.getElementById('s')
+            function change(name) {
+                if (name =='r'){
+                    r.style.display = 'block'
+                    b.style.display = 'none'
+                    s.style.display = 'none'
+                }
+                else if(name == 'b'){
+                    r.style.display = 'none'
+                    b.style.display = 'block'
+                    s.style.display = 'none'
+                }
+                else if(name == 's'){
+                    r.style.display = 'none'
+                    b.style.display = 'none'
+                    s.style.display = 'block'
+                }
+            }
+        </script>
+        
+    </body>
+</html>
