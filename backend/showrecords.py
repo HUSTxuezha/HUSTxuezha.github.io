@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Aug  5 09:49:16 2023
-
 @author: HUST学渣
 """
 
@@ -235,26 +234,6 @@ template_content = """
         </script>
         
     </body>
-</html>
-"""
-
-"""
-<html>
-<head>
-<title>LaTeX公式展示</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
-</head>
-<body>
-{% for formula in formulas %}
-    <div>
-        ({{ loop.index }})<br>
-        <script type="math/tex">
-            {{ formula[1] }}
-        </script>
-    </div>
-    <div style="margin-bottom: 20px;"></div>
-{% endfor %}
-</body>
 </html>
 """
 
