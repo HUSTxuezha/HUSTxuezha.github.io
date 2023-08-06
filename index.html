@@ -148,7 +148,7 @@
             <div class="main">
                 <button class="button" onclick="temp()">休闲模式（单人）</button>
                 <button class="button button2" onclick="temp()">PK模式（双人）</button>
-                <button class="button button3" id="executeBtn" onclick='location.href=("frontend/record.html")'>个人记录</button>
+                <button class="button button3" onclick='runPythonScript()'>个人记录</button>
                 <button class="button button4" onclick="temp()">排行榜</button>
             </div>
         </div>
@@ -160,16 +160,12 @@
                 alert('功能开发中，敬请期待~');
             }
             
-            document.getElementById('executeBtn').addEventListener('click', function() {
-                // 创建一个XMLHttpRequest对象
-                var xhr = new XMLHttpRequest();
-                // 定义要执行的Python文件的URL
-                var pythonFileURL = 'frontend/showrecords.py';
-                // 设置请求类型为GET，并指定要执行的Python文件的URL
-                xhr.open('GET', pythonFileURL, true);
-                // 发送请求
-                xhr.send();
-            });
+            function runPythonScript() {
+                fetch('backend/showrecords.py')
+                    .then(response => response.text())
+                    .then(data => console.log(data))
+                    .catch(error => console.error(error));
+                }
         </script>
 
     </body>
